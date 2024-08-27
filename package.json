@@ -1,11 +1,14 @@
 {
   "name": "three.js-runner",
   "version": "1.0.0",
-  "type":"module",
+  "type": "module",
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "script": "node threeApp.js",
+    "dev": "nodemon threeApp.js"
+
   },
   "keywords": [],
   "author": "",
@@ -14,6 +17,7 @@
     "nodemon": "^3.1.4"
   },
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "three": "^0.167.1"
   }
 }
