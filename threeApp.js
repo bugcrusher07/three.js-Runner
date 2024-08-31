@@ -14,6 +14,7 @@ const geometry = new THREE.BoxGeometry(1,1,1);
 const material = new THREE.MeshBasicMaterial({color:0x00ff00});
 const cube = new THREE.Mesh(geometry,material);
 
+<<<<<<< Updated upstream
 
 const gltfLoader = new GLTFLoader();
 gltfLoader.load("./res/FPS_player.gltf",(gltfScene) => {
@@ -23,6 +24,17 @@ gltfLoader.load("./res/FPS_player.gltf",(gltfScene) => {
 camera.position.z =5;
 
 function animate(){
+=======
+camera.lookAt(cube.position)
+
+window.addEventListener("keydown",(e) =>{
+
+})
+
+
+function animate(){
+  renderer.render(scene,camera);
+>>>>>>> Stashed changes
   cube.rotation.x +=0.01;
   cube.rotation.y +=0.01;
   renderer.render(scene, camera);
