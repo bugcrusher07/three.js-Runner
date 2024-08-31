@@ -28,14 +28,14 @@ scene.add(cube);
 const grid = new Three.GridHelper(10,10);
 scene.add(grid);
 
+const axis = new Three.AxesHelper(10);
+scene.add(axis);
 
 camera.lookAt(cube.position)
 
 
 window.addEventListener("keydown",(e) =>{
-  if ( cube.position.z<= 10 && cube.position.z >= -5 ){
-    switch
-  }
+
 })
 
 
