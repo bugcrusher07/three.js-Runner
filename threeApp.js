@@ -23,6 +23,7 @@ const gltfLoader = new GLTFLoader();
 const bridgeMaterial =new Three.MeshBasicMaterial({color:  0x00ff00})
 
 function addingBridges (){
+
 gltfLoader.load(("res/bridge/bridge.gltf"),(gltfObj) => {
   gltfObj.scene.traverse((child) => {
     if (child.isMesh){
@@ -30,9 +31,12 @@ gltfLoader.load(("res/bridge/bridge.gltf"),(gltfObj) => {
     }
   })
   gltfObj.scene.scale.set(2.1,2.1,2.1);
-  console.log(gltfObj.scene.position.y)
+  gltfObj.scene.position.z =-10;
   scene.add(gltfObj.scene);
+
+
 })}
+
 
 camera.position.z = 7;
 camera.position.x = 0;
@@ -46,12 +50,22 @@ scene.add(grid);
 const axis = new Three.AxesHelper(10);
 scene.add(axis);
 
-camera.lookAt(cube.position)
+camera.lookAt(0,2,5);
 
 
 window.addEventListener("keydown",(e) =>{
-  if (e.key =="a" && cube.position.x <)
+  if (e.key =="a" && cube.position.x > -3.5){
+    cube.position.x -=3.5;
+    console.log(cube.position);
+  }
+  if(e.key =="d" && cube.position.x < 3.5){
+    cube.position.x +=3.5;
+    console.log(cube.position);
+  }
+
 })
+
+
 
 
 
@@ -63,3 +77,4 @@ function animate(){
 }
 
 animate();
+
