@@ -1,7 +1,7 @@
- import * as THREE from "three";
+import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/Addons.js";
 
-const scene = new THREE.Scene();o
+const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(100,window.innerWidth/window.innerHeight , 0.1 , 1000);
 const renderer = new THREE.WebGLRenderer();
