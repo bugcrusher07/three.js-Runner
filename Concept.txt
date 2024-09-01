@@ -1,0 +1,6 @@
+main char - man riding on a boat.
+sliding mech - dodging waves by sliding under them like in surfing. 
+switching lands - the existing boat will disappear and the new boat will appear with a transitioning animation.
+enemy - enemy ship coming towards you and they are loading the canons on their boat and you have to shoot them down before they are able to do so. also play with the idea that they may change lanes as well.
+
+power ups - pirate bottles containing different types of power ups and abilities

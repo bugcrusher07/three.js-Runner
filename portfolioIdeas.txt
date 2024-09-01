@@ -1,0 +1,2 @@
+portfolio site can have a good mechanism in the background like a cube rotating or a globe rotating or some shit like that. and the website will obliviously have a game in the bottom of it like the temple run three js and the ai tic tac toe.
+now what kind of mechanism we should have for the object in the background.
