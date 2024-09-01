@@ -12,7 +12,6 @@ const grid = new Three.GridHelper(10,10);
 scene.add(grid);
 scene.add(axes);
 
-camera.position.z +=5;
 renderer.setSize(window.innerWidth , window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
@@ -22,22 +21,22 @@ const cube = new Three.Mesh(geometry,material);
 const gltfLoader = new GLTFLoader();
 
 const planeMaterial = new Three.MeshBasicMaterial({color:0xD3D3D3});
-const planeGeometry = new Three.PlaneGeometry(12,60,1);
+const planeGeometry = new Three.PlaneGeometry(12,100);
 const plane = new Three.Mesh(planeGeometry,planeMaterial);
 
-camera.position.y =-5;
-camera.position.x =0;
-camera.position.z =4;
-
+camera.position.y =3;
+camera.position.z =10;
+plane.rotation.x =55;
 camera.lookAt(cube.position);
-plane.position.set(0,14,0);
-cube.position.set(0,-2,0.04);
+plane.position.set(0,0,-45);
+cube.position.set(0,0.5,5);
 
 imInitBridge(gltfLoader,(loadedBridge) => {
   bridge = loadedBridge;
   scene.add(bridge.scene);
   console.log(bridge);
 });
+
 
 scene.add(cube);
 scene.add(plane);
