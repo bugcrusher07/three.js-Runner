@@ -1,5 +1,6 @@
 import { GLTFLoader } from "three/examples/jsm/Addons.js";
 
+
 export function imCubeRotate(cube){
   cube.rotation.x += 0.02;
   cube.rotation.y += 0.02;
@@ -20,6 +21,13 @@ export function imCubeMoments(cube){
 
 export function imInitBridge(gltfLoader,callback){
   gltfLoader.load("./res/bridge/bridge.gltf",(gltfObj) =>{
+
     callback(gltfObj);
   })
+}
+
+export function imMovingBridge(bridge){
+  if ( bridge.position.z < 0){
+    bridge.position.z +=0.02;
+  }
 }
