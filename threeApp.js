@@ -23,7 +23,7 @@ const gltfLoader = new GLTFLoader();
 const bridgeMaterial =new Three.MeshBasicMaterial({color:  0x00ff00})
 let bridge;
 
-function initBridges (){
+function initBridge (){
 
 gltfLoader.load(("res/bridge/bridge.gltf"),(gltfObj) => {
   gltfObj.scene.traverse((child) => {
@@ -36,7 +36,7 @@ gltfLoader.load(("res/bridge/bridge.gltf"),(gltfObj) => {
   bridge = gltfObj.scene;
 })}
 
-initBridges();
+initBridge();
 
 
 camera.position.z = 7;
@@ -65,17 +65,22 @@ window.addEventListener("keydown",(e) =>{
   }
 
 })
+let bridgeMeshes = [];
+function spawnBridges(bridgeOg){
+    const bridgeTemp = bridgeOg;
+    scene.add(bridgeTemp);
+    bridgeMeshes.push(bridgeTemp);
+
+
+
+}
 
 function moveBridges(bridge){
   if ( bridge.position.z < 4.4){
     bridge.position.z +=2;}
     else {
-      scene.r
     }
-
-
 }
-
 
 
 function animate(){
