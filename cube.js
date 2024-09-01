@@ -18,11 +18,8 @@ export function imCubeMoments(cube){
   })
 }
 
-const gltfLoader = new GLTFLoader();
-
-export function imInitBridge(bridge){
+export function imInitBridge(gltfLoader,callback){
   gltfLoader.load("./res/bridge/bridge.gltf",(gltfObj) =>{
-   bridge =gltfObj;
-   console.log("loading successful");
+    callback(gltfObj);
   })
 }
