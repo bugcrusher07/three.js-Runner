@@ -21,7 +21,6 @@ export function imCubeMoments(cube){
 
 export function imInitBridge(gltfLoader,callback){
   gltfLoader.load("./res/bridge/bridge.gltf",(gltfObj) =>{
-
     callback(gltfObj);
   })
 }
@@ -29,5 +28,6 @@ export function imInitBridge(gltfLoader,callback){
 export function imMovingBridge(bridge){
   if ( bridge.position.z < 0){
     bridge.position.z +=0.02;
+    console.log(bridge.position);
   }
 }

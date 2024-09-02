@@ -3,6 +3,7 @@ import { GLTFLoader } from "three/examples/jsm/Addons.js";
 import { OrbitControls } from "three/examples/jsm/Addons.js";
 import { imCubeRotate,imInitBridge,imCubeMoments ,imMovingBridge} from "./cube";
 
+let isBridge = false;
 let bridge;
 const camera = new Three.PerspectiveCamera(75,window.innerWidth / window.innerHeight , 0.1 , 1000);
 const scene = new Three.Scene();
@@ -41,10 +42,9 @@ imInitBridge(gltfLoader,(loadedBridge) => {
       child.material = bridgeMaterial;
     }
   })
-  bridge.scene.position.z = -40;
-  scene.add(bridge.scene);
-  console.log(bridge);
-});
+  bridge.scene.position.z = -10;
+
+} );
 
 
 scene.add(cube);
@@ -52,9 +52,26 @@ scene.add(plane);
 
 imCubeMoments(cube);
 
+function spawnBridge(){
+   if (! isBridge){
+  scene.add(bridge.scene)
+  bridge.scene.position.z = -10;
+  isBridge = true;
+  console.log("added scene and isBridge = true")
+}
+  else {
+    if ( bridge.scene.position.z >=0){
+      scene.remove(bridge.scene);
+      isBridge = false;
+      console.log("removing bridge and isBridge = false")
+    }
+  }
+}
+
 function animate(){
   if (bridge && bridge.scene) {
     imMovingBridge(bridge.scene);
+    spawnBridge();
   }
   imCubeRotate(cube);
   renderer.render(scene,camera);
